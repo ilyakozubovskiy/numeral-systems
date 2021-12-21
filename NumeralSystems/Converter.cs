@@ -89,13 +89,13 @@ namespace NumeralSystems
             {
                 case 8:
                     {
-                        uint undignedNumber = number < 0 ? 0u + (uint)number : (uint)number;
+                        uint unsignedNumber = number < 0 ? 0u + (uint)number : (uint)number;
                         long result = 0, count = 1;
 
-                        while (undignedNumber != 0)
+                        while (unsignedNumber != 0)
                         {
-                            result += (undignedNumber % 8) * count;
-                            undignedNumber /= 8;
+                            result += (unsignedNumber % 8) * count;
+                            unsignedNumber /= 8;
                             count *= 10;
                         }
 
@@ -107,11 +107,11 @@ namespace NumeralSystems
                 case 16:
                     {
                         StringBuilder res = new StringBuilder();
-                        uint undignedNumber = number < 0 ? 0u + (uint)number : (uint)number;
+                        uint unsignedNumber = number < 0 ? 0u + (uint)number : (uint)number;
 
-                        while (undignedNumber != 0)
+                        while (unsignedNumber != 0)
                         {
-                            switch (undignedNumber % 16)
+                            switch (unsignedNumber % 16)
                             {
                                 case 0:
                                     res.Insert(0, "0");
@@ -163,7 +163,7 @@ namespace NumeralSystems
                                     break;
                             }
 
-                            undignedNumber /= 16;
+                            unsignedNumber /= 16;
                         }
 
                         return res.ToString();
